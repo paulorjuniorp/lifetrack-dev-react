@@ -44,7 +44,7 @@ const LoginForm = ({ title, imageSrc1, imageSrc2, formTitle, subTitle }) => {
   return (
     <Container>
       <LogoSection>
-        <Title>{title}</Title>
+        <Title cor="green">{title}</Title>
         <ImagesDiv>
           <Image src={imageSrc1} alt="Personagem masculino sentado" />
           <Image src={imageSrc2} alt="Personagem feminina sentada" />
