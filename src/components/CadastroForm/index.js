@@ -10,6 +10,7 @@ import Fieldset from '../FieldSet';
 import Label from '../Label';
 import Input from '../Input';
 import Button from '../Button';
+import { useNavigate } from "react-router-dom";
 
 const CadastroForm = ({ title, imageSrc1, imageSrc2, formTitle }) => {
   const [nome, setNome] = useState('');
@@ -20,6 +21,7 @@ const CadastroForm = ({ title, imageSrc1, imageSrc2, formTitle }) => {
   const [confirmSenha, setConfirmSenha] = useState('');
   const [erroSenha, setErroSenha] = useState('');
   const [erroConfirmacao, setErroConfirmacao] = useState('');
+  const navigate = useNavigate();
 
   const validarSenha = () => {
     let mensagemErro = "";
@@ -49,7 +51,7 @@ const CadastroForm = ({ title, imageSrc1, imageSrc2, formTitle }) => {
     if (validarSenha() && validarConfirmacao()) {
       const dadosCadastro = { nome, email, telefone, nascimento, passwdForm: senha };
       localStorage.setItem("cadastro", JSON.stringify(dadosCadastro));
-      window.location.href = "./index.html";
+      navigate("/");
     }
   };
 

@@ -10,8 +10,8 @@ import Fieldset from '../FieldSet';
 import Label from '../Label';
 import Input from '../Input';
 import Button from '../Button';
-import Link from '../Link';
 import SubTitle from '../SubTitle';
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ title, imageSrc1, imageSrc2, formTitle, subTitle }) => {
   const [usuario, setUsuario] = useState('');
@@ -63,10 +63,10 @@ const LoginForm = ({ title, imageSrc1, imageSrc2, formTitle, subTitle }) => {
           <Input type="password" value={passwd} onChange={(e) => setPasswd(e.target.value)} required />
           <span className="mensagem-erro">{senhaErro}</span>
         </Fieldset>
-        <Link href="#">Esqueceu a senha?</Link>
+        <Link to="/recuperacao">Esqueceu a senha?</Link>
         <Button type="submit">Entrar</Button>
         <div>
-          <span>Não tem uma conta? <Link href="form.html"><strong>Cadastre-se</strong></Link></span>
+          <span>Não tem uma conta? <Link to="/cadastro"><strong>Cadastre-se</strong></Link></span>
         </div>
       </Form>
     </Container>
