@@ -12,12 +12,15 @@ import Input from '../Input';
 import Button from '../Button';
 import SubTitle from '../SubTitle';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ title, imageSrc1, imageSrc2, formTitle, subTitle }) => {
   const [usuario, setUsuario] = useState('');
   const [passwd, setPasswd] = useState('');
   const [emailErro, setEmailErro] = useState('');
   const [senhaErro, setSenhaErro] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +34,7 @@ const LoginForm = ({ title, imageSrc1, imageSrc2, formTitle, subTitle }) => {
       const { email, passwdForm } = dadosCadastro;
 
       if (usuario === email && passwd === passwdForm) {
-        window.location.href = "./organization.html";
+       navigate("/home");
       } else {
         if (usuario !== email) setEmailErro("E-mail incorreto.");
         if (passwd !== passwdForm) setSenhaErro("Senha incorreta.");

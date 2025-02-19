@@ -1,6 +1,7 @@
 import LoginForm from './components/LoginForm/index';
 import CadastroForm from './components/CadastroForm/index';
 import PasswdRecoveryForm from './components/PasswdRecoveryForm';
+import Home from './components/Home';
 import imagem1 from './imagens/peep-sitting-4.png';
 import imagem2 from './imagens/peep-sitting-7.png';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -27,6 +28,7 @@ function App() {
                   imageSrc2={imagem2}
                 />} />
             <Route path="/recuperacao" element={<PasswdRecoveryForm />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </Router>
       </header>
